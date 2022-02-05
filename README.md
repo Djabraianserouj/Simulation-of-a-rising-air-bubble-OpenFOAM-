@@ -1,1 +1,2 @@
-# Simulation-of-a-air-bubble-rising-
+# Simulation-of-a-rising-air-bubble(OpenFOAM)
+The goal of this project is the Implementation of Continuous Species Transfer using OpenFOAM. The setup for the case is done in the CaseDir Directory along with the mesh provided in the polymesh directory. This repository also provides PARAVIEW state files which we're used to calculate some interesting values and perform conclusions. Moreover, a bash script file was used in order to run OpenFOAM in parallel on a High-Performance-Computer. More information about the task can be found in "Task.pdf".
