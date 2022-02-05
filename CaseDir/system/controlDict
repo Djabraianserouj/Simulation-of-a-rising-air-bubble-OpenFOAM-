@@ -1,0 +1,81 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.x                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     interFoam_Cst;   // Provide the name of your solver!! interFoam_Cst.C
+
+startFrom       latestTime;//startTime
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         1.2;
+
+deltaT          0.00001;
+
+writeControl    adjustableRunTime;
+
+writeInterval   0.01;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  6;
+
+writeCompression on;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable yes;
+
+adjustTimeStep  yes;
+
+maxCo           0.05;       // CFL must be less than 0.5
+maxAlphaCo      0.05;
+
+maxDeltaT       1;
+
+//
+ OptimisationSwitches
+  {  
+      //- Parallel IO file handler
+      // uncollated (default), collated or masterUncollated
+      fileHandler collated;
+  
+      //- collated: thread buffer size for queued file writes. 
+      // If set to 0 or not sufficient for the file size threading is not used. 
+      // Default: 2e9
+      maxThreadFileBufferSize 0;
+  
+      //- masterUncollated: non-blocking buffer size. 
+      // If the file exceeds this buffer size scheduled transfer is used. 
+      // Default: 2e9
+      maxMasterFileBufferSize 2e9;
+  }
+//
+
+/*
+DebugSwitches
+{
+    dimensionSet 0;
+}
+*/
+
+// ************************************************************************* //

@@ -1,0 +1,26 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  dev                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      phaseProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// for boethe test case this D1 and D2 are different!!!! keep this in mind
+
+D2          D2 [0 2 -1 0 0 0 0] 2.13e-10;//0.2085e-4;   // diffusivity from liquid to gas for the dissolved species2.13 × 10 − 6
+D1          D1 [0 2 -1 0 0 0 0] 0.2085e-4;//2.13e-10;   // diffusivity of species inside the liquid medium hence selfe diffivity
+
+H	H [0 0 0 0 0 0 0] 33;//33;
+
+
+// ************************************************************************* //
